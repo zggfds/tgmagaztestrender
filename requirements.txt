@@ -1,0 +1,7 @@
+flask
+pip
+requests
+gunicorn==19.7.1
+asyncio
+pillow
+yoomoney
