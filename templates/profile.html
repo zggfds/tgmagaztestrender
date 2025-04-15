@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=-_HpzO1D4zNFCcjPLy7WnnA28u5eQHyrtOdMzcpYzlTx-qtU3Mtn1Fco1kMC727TjeUZA3rO_0FiBmWcX9n5TjA9TGefMlGZ0kLGElomrW-OW47whjhenDJD6oP1vxkXTeII54b71jfs4ASHt8fMzw" charset="UTF-8"></script><style>
+        body { background-color: #121212; color: #ffffff; font-family: Arial, sans-serif; text-align: center; }
+        img { border-radius: 10px; max-width: 200px; margin-top: 20px; }
+        input, button { padding: 10px; margin: 10px; border-radius: 5px; border: none; }
+        button { background-color: #bb86fc; color: white; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать, {{ user.nickname }}!</h1>
+    <p>Ваше имя пользователя: {{ user.username }}</p>
+
+    {% if photo_url %}
+        <img src="{{ photo_url }}" alt="Фото профиля">
+    {% else %}
+        <p>Фото профиля не установлено.</p>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="photo">Загрузите фото профиля:</label><br>
+        <input type="file" name="photo" accept="image/*" required><br>
+        <button type="submit">Загрузить</button>
+    </form>
+
+
+</body>
+</html>

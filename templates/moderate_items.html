@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары на модерации</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=CCNJWdaSLVGSSxITrMKFGEbp7sZo1Zucj6ZHq7rmvdy-FXXHEfFXTxxsd8Am8FgSN321t8maUDbjdRz1lDUz2l3VWM73VyDXOlyaV9JUgF1IWWRvQzePCRkMeGy9oVOywp4xSscFggAMSUW60kvWrMyzzc6P4AL8pqeCLGH8cHg" charset="UTF-8"></script><style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+        }
+        .item-info {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>Товары на модерации</h1>
+    {% for item_id, item in items.items() %}
+    <div class="item">
+        <img src="{{ url_for('static', filename='uploads/' + item.cover) }}" alt="Обложка">
+        <div class="item-info">
+            <h3>{{ item.title }}</h3>
+            <p>Автор: {{ item.nickname }}</p>
+            <form action="/approve_item/{{ item_id }}" method="post" style="display: inline;">
+                <button type="submit">Одобрить</button>
+            </form>
+            <form action="/reject_item/{{ item_id }}" method="post" style="display: inline;">
+                <button type="submit">Отклонить</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
