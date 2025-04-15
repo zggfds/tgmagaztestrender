@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата успешно завершена</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=xvm4_f5GfmtxfKpgpLhfxxuXLhv3n9uzP9m_AXxDFkdRcw2w3I0JMJe989j3q06nODdzBuOhqzyumnx6Uf_HQlX0Hu2OvXkVvr2sdFrH4RT4fSYgHlMZ8ttZWOeY4ahr--AuUB99IGzsF6EgaPOwQkitBBKk1z5CGuu6zVxq1DY" charset="UTF-8"></script><style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container h1 {
+            margin: 20px 0;
+        }
+        .container p {
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0077cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Оплата успешно завершена!</h1>
+        <p>Вы оплатили товар: <strong>{{ item['title'] }}</strong></p>
+        <p>Товар успешно удален из списка.</p>
+        <a href="{{ url_for('view_items') }}" class="button">Вернуться к списку товаров</a>
+    </div>
+</body>
+</html>
